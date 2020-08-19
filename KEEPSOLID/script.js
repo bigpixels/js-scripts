@@ -1,5 +1,4 @@
 "use strict"
-
 // Дан объект: {name: 'John', 'surname': 'Johnson', 'age': '20'}. Напишите функцию которая записывает соответствующие значения в переменные name, surname и age. 
 
 // function makeUser(userName, userSurName, userAge) {
@@ -14,13 +13,13 @@
 // console.log("Name: " + user.name, "\nSurname: " + user.surname, "\nAge: " + user.age + "\n");
 
 // let user = {
-//   name: 'John', 
-//   surname: 'Johnson', 
-//   age: '20'
+//   name2: 'бла', 
+//   surname2: 'блабла', 
+//   age2: '1'
 // }
 
-// function recordValue ({name, surname, age}) {
-//  alert(`${name}, ${surname}, ${age}`);
+// function recordValue ({name2, surname2, age2}) {
+//  alert(`${name2}, ${surname2}, ${age2}`);
 // }
 
 // alert(recordValue(user));
@@ -63,49 +62,11 @@
 // $("#validate").bind("click", validate);
 
 //Дан массив [1, 'abc', [], [a], {}, {name: "ololo"}, null, 0]. Напишите функцию которая вернет новый массив без пустых значений (пустой массив и пустой объект - тоже расцениваются как пустые значения)
-// let a = 'a';
-// let sparseArray = [1, 'abc', [], [a], {}, {name: "ololo"}, null, 0];
-// let cleanArray = sparseArray.filter(function (el) {
-//   return el != null && el.length != 0 && Object.getOwnPropertyNames(el) !=0 || typeof el === 'number' && isFinite(el);
-// });
-// console.log(cleanArray);
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Получить четные и нечетные числа заднного диапазона.
-let minInput = prompt('Min:');
-let maxInput = prompt('Max:');
-
-let minNumber = parseInt(minInput);
-let maxNumber = parseInt(maxInput);
-
-function range(start, end) {
-  let evenNumbers = [];
-  let oddNumbers = [];
-  for (let i = start; i <= end; i++) {
-    if (i%2 == 0 && i != 0) {
-      evenNumbers.push(i);
-    } else if (i != 0) {
-      oddNumbers.push(i);
-    }
-  }
-  return {
-    'Четные числа: ': evenNumbers,
-    'Нечетные числа: ': oddNumbers.reverse(),
-  };
-}
-
-console.log(range(minNumber, maxNumber));
-
-/* Exercise 1:
-  Write a Javascript program to chek two numbers and return true if one of the number is 100 or if the sum of the two numbers is 100.
-*/
-// let numbers = [49, 50];
-// let chekNumber = numbers.reduce((accum, current) => current === 100 || accum + current === 100);
-// console.log(chekNumber);
-
-/* Exercise 2:
-  Write a JavaScript program, to get the extension of a filename.
-*/
-// const getFileExtension = (str) => str.slice
-
+let a = 'a';
+let sparseArray = [1, 'abc', [], [a], {}, {name: "ololo"}, null, 0];
+let cleanArray = sparseArray.filter(function (el) {
+  return el != null && el.length != 0 && Object.getOwnPropertyNames(el) !=0 || typeof el === 'number' && isFinite(el) && el !=0;
+});
+//используя стрелочную функцию
+// let cleanArray = sparseArray.filter( (el) =>  el != null && el.length != 0 && Object.getOwnPropertyNames(el) !=0 || typeof el === 'number' && isFinite(el) && el !=0);
+console.log(cleanArray);

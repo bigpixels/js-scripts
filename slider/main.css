@@ -1,0 +1,19 @@
+.classic-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-img {
+    border: 1px solid #000;
+}
+
+.img-area {
+    width: 180px;
+    height: 180px;
+}
+
+.mems {
+    width: 100%;
+    height: auto;
+}
